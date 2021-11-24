@@ -1,0 +1,16 @@
+#!/bin/sh
+
+case $1 in
+  up)
+    amixer sset Master 5%+
+    VOLUME=`amixer sget Master | awk '/Front Left:/{print $5}'` 
+    ;;
+  down)
+    amixer sset Master 5%-
+    VOLUME=`amixer sget Master | awk '/Front Left:/{print $5}'` 
+    ;;
+esac
+
+dunstify -r 1 -i "/home/arekkas/configs/dunst/volume-$1.png" -t 2000 "Volume" "${VOLUME}"
+     
+         
