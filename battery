@@ -1,6 +1,7 @@
 #!/bin/bash
 
-CURRENT=`cat /sys/class/power_supply/BAT0/charge_now`
+CURRENT=`cat /sys/class/power_supply/BAT0/status`
 FULL=`cat /sys/class/power_supply/BAT0/charge_full`
+CAPACITY=`cat /sys/class/power_supply/BAT0/capacity`
 PERC=$((100*CURRENT / FULL))
-dunstify -r 2 -i "$HOME/configs/dunst/battery.png" "Battery" "[${PERC}%]"
+dunstify -r 2 -i "$HOME/configs/dunst/battery.png" "Battery" "[${CAPACITY}%] ($CURRENT)"
