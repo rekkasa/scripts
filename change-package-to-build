@@ -1,5 +1,6 @@
 #!/bin/bash
 selection=` ls ~/Documents/git/r_packages | rofi -dmenu -p "Set R package to target"`
-echo $selection > ~/.tmp/targeted_r_package
+echo $selection > ~/.local/targeted_r_package
+
 
 dunstify -r 1 -i "~/configs/dunst/r-project.svg" -t 2001 "R package" "Focused <b>${selection}</b>"

@@ -1,6 +1,6 @@
 #!/bin/bash
 pushd ~/Documents/git/r_packages
-package=`cat ~/.tmp/targeted_r_package`
+package=`cat ~/.local/targeted_r_package`
 dunstify -r 1 -i "~/configs/dunst/r-project.svg" -t 2000 "Build" "Building package $package"
 R CMD INSTALL --preclean --no-multiarch --with-keep.source $package
 status=`echo $?`
