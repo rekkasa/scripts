@@ -1,0 +1,4 @@
+#!/bin/bash
+
+wget -O Wallpapers/random.jpg https://source.unsplash.com/1920x1080/?wallpapers
+feh --bg-scale Wallpapers/random.jpg

@@ -1,0 +1,4 @@
+#!/bin/bash
+
+BG=$(ls ~/Wallpapers | dmenu)
+feh --bg-scale ~/Wallpapers/$BG
