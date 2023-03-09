@@ -1,7 +1,6 @@
 #!/bin/sh
-
 BG=$(ls ~/Wallpapers | shuf | tail -n 1)
 [ -L ~/wallpaper ] && rm ~/wallpaper
-ln -s ~/Wallpapers/$BG ~/wallpaper
+rm ~/wallpaper && ln -s ~/Wallpapers/$BG ~/wallpaper
 feh --bg-scale ~/wallpaper
 
