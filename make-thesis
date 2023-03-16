@@ -1,0 +1,14 @@
+#!/bin/bash
+dunstify -r 1 -i "~/configs/dunst/r-project.svg" -t 5000 "Building thesis..."
+pushd ~/Documents/projects/thesis && make thesis
+status=`echo $?`
+
+case $status in
+  0)
+    dunstify -r 1 -i "~/configs/dunst/r-project.svg" -t 3000 "Success!"
+    ;;
+  *)
+    dunstify -r 1 -i "~/configs/dunst/r-project.svg" -t 5000 "Failed!"
+    ;;
+esac
+popd
