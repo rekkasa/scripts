@@ -1,0 +1,3 @@
+#!/bin/bash
+echo "" | rofi -dmenu -p "Google Scholar" | xargs -I{} xdg-open https://scholar.google.com/scholar?q={}
+

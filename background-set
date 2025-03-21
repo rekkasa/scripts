@@ -1,5 +1,5 @@
 #!/bin/bash
 rm ~/wallpaper
-BG=$(ls ~/Wallpapers | dmenu)
+BG=$(ls ~/Wallpapers | rofi -dmenu)
 ln -s ~/Wallpapers/$BG ~/wallpaper
-feh --bg-scale ~/Wallpapers/$BG
+feh --bg-fill ~/Wallpapers/$BG
